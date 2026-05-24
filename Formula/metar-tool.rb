@@ -5,13 +5,13 @@
 class MetarTool < Formula
   desc "METAR aviation weather decoder"
   homepage "https://github.com/kevinpinscoe/metar-tool"
-  version "1.0.1"
+  version "1.1.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/kevinpinscoe/metar-tool/releases/download/v1.0.1/metar-tool-darwin-arm64"
-      sha256 "48fa537c6d53d0b547ae48f6572baca9d8d0fbd1392e054d2bfdf254cf71241c"
+      url "https://github.com/kevinpinscoe/metar-tool/releases/download/v1.1.0/metar-tool-darwin-arm64"
+      sha256 "4626fd848a86851a8ec21dc6316bdcbd77f06d00d94bf81f92d1de83f71338c9"
 
       define_method(:install) do
         bin.install "metar-tool-darwin-arm64" => "metar-tool"
@@ -21,15 +21,15 @@ class MetarTool < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kevinpinscoe/metar-tool/releases/download/v1.0.1/metar-tool-linux-amd64"
-      sha256 "ce97a21faa4721571e10f3d53d3ec5a6f21e73109c78f16d8225a081707158c6"
+      url "https://github.com/kevinpinscoe/metar-tool/releases/download/v1.1.0/metar-tool-linux-amd64"
+      sha256 "3d75ad8bea1a25dd486271ee3ad4fcae9aa49298d077db610d93b853d1f3702d"
       define_method(:install) do
         bin.install "metar-tool-linux-amd64" => "metar-tool"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kevinpinscoe/metar-tool/releases/download/v1.0.1/metar-tool-linux-arm64"
-      sha256 "886d2811899a0cc9f83bfd7d933577d5f3c890ca472ddf0107cf6ecccbe29646"
+      url "https://github.com/kevinpinscoe/metar-tool/releases/download/v1.1.0/metar-tool-linux-arm64"
+      sha256 "bd36132df08f4ccbcc4a3e0a03eb1c1ce7192a010ed9466e0d05a8e2d06303e1"
       define_method(:install) do
         bin.install "metar-tool-linux-arm64" => "metar-tool"
       end
