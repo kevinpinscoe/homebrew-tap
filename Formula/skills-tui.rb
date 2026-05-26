@@ -5,38 +5,38 @@
 class SkillsTui < Formula
   desc "Interactive TUI skill chooser"
   homepage "https://github.com/kevinpinscoe/skills-tui"
-  version "2.5.1"
+  version "3.0.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/kevinpinscoe/skills-tui/releases/download/v2.5.1/skill-darwin-arm64"
-      sha256 "709af61886872e6888d833c6652a85bc4e759708b1f0dddeea28f7eea605fde4"
+      url "https://github.com/kevinpinscoe/skills-tui/releases/download/v3.0.0/skills-darwin-arm64"
+      sha256 "affe2c2fd756ec0771085e2da96607d6e1322b857f24bb777c25ca760415e575"
 
       define_method(:install) do
-        bin.install "skill-darwin-arm64" => "skill"
+        bin.install "skills-darwin-arm64" => "skills"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kevinpinscoe/skills-tui/releases/download/v2.5.1/skill-linux-amd64"
-      sha256 "701d09cf6587550486f01e40365095d61cf1a5b265975bcd0b291790b11387df"
+      url "https://github.com/kevinpinscoe/skills-tui/releases/download/v3.0.0/skills-linux-amd64"
+      sha256 "d131cbe2b61247e319462dc3a894b8bfc33d21faa999a1bc39c01cd9302d3db5"
       define_method(:install) do
-        bin.install "skill-linux-amd64" => "skill"
+        bin.install "skills-linux-amd64" => "skills"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kevinpinscoe/skills-tui/releases/download/v2.5.1/skill-linux-arm64"
-      sha256 "97a3c2ce2796e2c3075369d4559672e8f4fa9c5d6429662648854ccec1821a7d"
+      url "https://github.com/kevinpinscoe/skills-tui/releases/download/v3.0.0/skills-linux-arm64"
+      sha256 "4b881aaac8744e32d9de5d129210bf3420b92b3ce15a8d7b16141b51c07136e7"
       define_method(:install) do
-        bin.install "skill-linux-arm64" => "skill"
+        bin.install "skills-linux-arm64" => "skills"
       end
     end
   end
 
   test do
-    system "#{bin}/skill", "--help"
+    system "#{bin}/skills", "--help"
   end
 end
