@@ -5,13 +5,13 @@
 class GetWx < Formula
   desc "Eastern Tennessee weather forecast fetcher"
   homepage "https://github.com/kevinpinscoe/get-wx"
-  version "1.0.1"
+  version "1.0.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/kevinpinscoe/get-wx/releases/download/v1.0.1/get-wx-darwin-arm64"
-      sha256 "3007bd83c7ceb3ef0963855940536c29a6a4fe5a802f504d9ecd823d4306e430"
+      url "https://github.com/kevinpinscoe/get-wx/releases/download/v1.0.2/get-wx-darwin-arm64"
+      sha256 "50c3b8e59bf78237ac19f9589128b3adb73978736e9cf142dff97074d463152b"
 
       define_method(:install) do
         bin.install "get-wx-darwin-arm64" => "get-wx"
@@ -21,15 +21,15 @@ class GetWx < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kevinpinscoe/get-wx/releases/download/v1.0.1/get-wx-linux-amd64"
-      sha256 "e63bf402088b27d03bd0dc358efd57db6f2723ce05178fec04b2f420c7f08b77"
+      url "https://github.com/kevinpinscoe/get-wx/releases/download/v1.0.2/get-wx-linux-amd64"
+      sha256 "e2df17d9c02f3dd2a63ffdef8d545fb12ceea1a701fa476c9b54b1b7e229e906"
       define_method(:install) do
         bin.install "get-wx-linux-amd64" => "get-wx"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kevinpinscoe/get-wx/releases/download/v1.0.1/get-wx-linux-arm64"
-      sha256 "8e9577bb139ff82b241fef0828baa27f1e4bb2c8da250c1074d9f33245b45b7e"
+      url "https://github.com/kevinpinscoe/get-wx/releases/download/v1.0.2/get-wx-linux-arm64"
+      sha256 "a64e50ff12ac63bd927f5f1e757dacea20c090ca91b40c84a506afe44be252ce"
       define_method(:install) do
         bin.install "get-wx-linux-arm64" => "get-wx"
       end
