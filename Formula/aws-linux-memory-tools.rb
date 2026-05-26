@@ -5,13 +5,13 @@
 class AwsLinuxMemoryTools < Formula
   desc "AWS Linux memory diagnostics"
   homepage "https://github.com/kevinpinscoe/aws-linux-memory-tools"
-  version "1.0.0"
+  version "1.0.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/kevinpinscoe/aws-linux-memory-tools/releases/download/v1.0.0/aws-linux-memory-tools-darwin-arm64"
-      sha256 "59fea5f317eea02e02b14fa9c5864f140649d069ecb0660ccd7c040c8b6090cb"
+      url "https://github.com/kevinpinscoe/aws-linux-memory-tools/releases/download/v1.0.1/aws-linux-memory-tools-darwin-arm64"
+      sha256 "e9e842c11b3d4c7d0a55bba6ef40ea9f42cd350c65e5488bc39d1dd0657d2e23"
 
       define_method(:install) do
         bin.install "aws-linux-memory-tools-darwin-arm64" => "aws-linux-memory-tools"
@@ -21,15 +21,15 @@ class AwsLinuxMemoryTools < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kevinpinscoe/aws-linux-memory-tools/releases/download/v1.0.0/aws-linux-memory-tools-linux-amd64"
-      sha256 "afe881975dc0a9d90a66e30ba08fa14dbc3d00f05df3413022cff120b3c91e16"
+      url "https://github.com/kevinpinscoe/aws-linux-memory-tools/releases/download/v1.0.1/aws-linux-memory-tools-linux-amd64"
+      sha256 "66fd05dabacba48f95f5f63a0168e801fd8dda5cc7d6260712b776a757030c48"
       define_method(:install) do
         bin.install "aws-linux-memory-tools-linux-amd64" => "aws-linux-memory-tools"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kevinpinscoe/aws-linux-memory-tools/releases/download/v1.0.0/aws-linux-memory-tools-linux-arm64"
-      sha256 "979f68f12a4799519ce149fc20fd2cc8d36cc74039b370aa1bb085a011462fa8"
+      url "https://github.com/kevinpinscoe/aws-linux-memory-tools/releases/download/v1.0.1/aws-linux-memory-tools-linux-arm64"
+      sha256 "1732a092c07d98f2ec80f6e046cfe59d373ea8be6bfae9701b3ec5141948dbf6"
       define_method(:install) do
         bin.install "aws-linux-memory-tools-linux-arm64" => "aws-linux-memory-tools"
       end
