@@ -5,13 +5,13 @@
 class CheckGitBranch < Formula
   desc "Check git branch status across repositories"
   homepage "https://github.com/kevinpinscoe/tools"
-  version "1.0.0"
+  version "1.0.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/kevinpinscoe/tools/releases/download/v1.0.0/check-git-branch-darwin-arm64"
-      sha256 "be4cfd911b254a8326f2a2d74c5769e3a315e7feaf51de5b3b60e0d4263ac436"
+      url "https://github.com/kevinpinscoe/tools/releases/download/check-git-branch-v1.0.1/check-git-branch-darwin-arm64"
+      sha256 "ebb657bfd2e1d89e3efc26567847dec21b707444e9efe40054ffe384b8e9b591"
 
       define_method(:install) do
         bin.install "check-git-branch-darwin-arm64" => "check-git-branch"
@@ -21,15 +21,15 @@ class CheckGitBranch < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kevinpinscoe/tools/releases/download/v1.0.0/check-git-branch-linux-amd64"
-      sha256 "d55793140795e7302100db6e9e6b58391b2ac23eb7d0b58f869799d82e28c508"
+      url "https://github.com/kevinpinscoe/tools/releases/download/check-git-branch-v1.0.1/check-git-branch-linux-amd64"
+      sha256 "e8ab8fff20a672dfa62f5f7078ede122e70a16c543abfa02df0f453d52a14f8d"
       define_method(:install) do
         bin.install "check-git-branch-linux-amd64" => "check-git-branch"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kevinpinscoe/tools/releases/download/v1.0.0/check-git-branch-linux-arm64"
-      sha256 "6cc8fc48cf1371eadadc1a87db639636f77834c72569651e9608dc9c0ac373c2"
+      url "https://github.com/kevinpinscoe/tools/releases/download/check-git-branch-v1.0.1/check-git-branch-linux-arm64"
+      sha256 "5c5201131e2985dee6a0002841cdf6c68115cc7faafc2ac1af3ba79a201a8a65"
       define_method(:install) do
         bin.install "check-git-branch-linux-arm64" => "check-git-branch"
       end
