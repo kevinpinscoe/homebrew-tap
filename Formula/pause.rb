@@ -5,13 +5,13 @@
 class Pause < Formula
   desc "Pause terminal output until a keypress"
   homepage "https://github.com/kevinpinscoe/tools"
-  version "1.0.0"
+  version "1.1.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/kevinpinscoe/tools/releases/download/v1.0.0/pause-darwin-arm64"
-      sha256 "978c304fca6ed11c98c9bde27b1e76f81df6cc84e148137909a020a9b56fb016"
+      url "https://github.com/kevinpinscoe/tools/releases/download/pause-v1.1.1/pause-darwin-arm64"
+      sha256 "4427663376ca092d35ad19268fcfbb2f378ab69b7aa9b8a62f6f5f6e85e530eb"
 
       define_method(:install) do
         bin.install "pause-darwin-arm64" => "pause"
@@ -21,15 +21,15 @@ class Pause < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kevinpinscoe/tools/releases/download/v1.0.0/pause-linux-amd64"
-      sha256 "f9e0f74a02b92539f948b8fbbb927855bd96e4953fbe614754947e94e673b12b"
+      url "https://github.com/kevinpinscoe/tools/releases/download/pause-v1.1.1/pause-linux-amd64"
+      sha256 "a2ca71d96c233348ec15224ff835f30d8707facbee4f023564d424807840e717"
       define_method(:install) do
         bin.install "pause-linux-amd64" => "pause"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kevinpinscoe/tools/releases/download/v1.0.0/pause-linux-arm64"
-      sha256 "8b9654db0728a0e35fdfc2e53bf16c11ee03c778e9afbab83c88c714dbff656c"
+      url "https://github.com/kevinpinscoe/tools/releases/download/pause-v1.1.1/pause-linux-arm64"
+      sha256 "37e9b05cd254060a5c1b0a5ce0a6279b969dd35a4f0eadd1981169219d6299f9"
       define_method(:install) do
         bin.install "pause-linux-arm64" => "pause"
       end
