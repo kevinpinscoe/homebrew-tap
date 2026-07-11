@@ -5,13 +5,13 @@
 class CheckGitRepos < Formula
   desc "Check git repositories for uncommitted or unpushed changes"
   homepage "https://github.com/kevinpinscoe/tools"
-  version "1.0.0"
+  version "1.10.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/kevinpinscoe/tools/releases/download/v1.0.0/check-git-repos-darwin-arm64"
-      sha256 "e4549dce6d5e9cfa7d153ae8b346b3e1eaace07485f0f6b799b0fbb94a3fd41f"
+      url "https://github.com/kevinpinscoe/tools/releases/download/check-git-repos-v1.10.1/check-git-repos-darwin-arm64"
+      sha256 "14dbae510fe5042068cdd062af13e4c6138eb7a399acf9e18eec54e224c9a970"
 
       define_method(:install) do
         bin.install "check-git-repos-darwin-arm64" => "check-git-repos"
@@ -21,15 +21,15 @@ class CheckGitRepos < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kevinpinscoe/tools/releases/download/v1.0.0/check-git-repos-linux-amd64"
-      sha256 "4a6f1568200ff5f7e2cbbd5f48c94db892c24cb54639da58b0ac9bf2004d02b7"
+      url "https://github.com/kevinpinscoe/tools/releases/download/check-git-repos-v1.10.1/check-git-repos-linux-amd64"
+      sha256 "81d72336f6923ceac295329d9948d4ecca7a9df37615cc5d86f41785d336b974"
       define_method(:install) do
         bin.install "check-git-repos-linux-amd64" => "check-git-repos"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kevinpinscoe/tools/releases/download/v1.0.0/check-git-repos-linux-arm64"
-      sha256 "5532d9c597e065f3fbf50e4416bf8f2ccd6dfea70ffa14bafa9b5103d6cbc2b9"
+      url "https://github.com/kevinpinscoe/tools/releases/download/check-git-repos-v1.10.1/check-git-repos-linux-arm64"
+      sha256 "e94b9b83cf7b24a2e0675317762b4c1bc0d27ba20f91ab2bbd4976a10da53fe1"
       define_method(:install) do
         bin.install "check-git-repos-linux-arm64" => "check-git-repos"
       end
