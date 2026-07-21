@@ -3,13 +3,13 @@
 class MenuApp < Formula
   desc "Run repository scripts from a simple TUI menu"
   homepage "https://github.com/kevinpinscoe/tools"
-  version "1.0.2"
+  version "2.0.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/kevinpinscoe/tools/releases/download/menu-app-v1.0.2/menu-app-darwin-arm64"
-      sha256 "9ad1acde4690dc14bed3b6bac7a06d7ae59475aa7f4903de39bc64a452167413"
+      url "https://github.com/kevinpinscoe/tools/releases/download/menu-app-v2.0.0/menu-app-darwin-arm64"
+      sha256 "96036f3c37350a4e78a065cd0268f0ed65d468f0a195ec471cda4b158a73c707"
 
       define_method(:install) do
         bin.install "menu-app-darwin-arm64" => "menu-app"
@@ -19,15 +19,15 @@ class MenuApp < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kevinpinscoe/tools/releases/download/menu-app-v1.0.2/menu-app-linux-amd64"
-      sha256 "b45df5977b2c061f1fd37b5a7b81d151d542bfee2a903dbfc66138682fc1e336"
+      url "https://github.com/kevinpinscoe/tools/releases/download/menu-app-v2.0.0/menu-app-linux-amd64"
+      sha256 "8b73adc4269548ad63765be5137b2d7db1309a924ab6f94333ed8bbd65dc6879"
       define_method(:install) do
         bin.install "menu-app-linux-amd64" => "menu-app"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kevinpinscoe/tools/releases/download/menu-app-v1.0.2/menu-app-linux-arm64"
-      sha256 "53594f8bb46e94720030e35f3fd309ec8e036b1a5dee5199b1cfe70b06e0028a"
+      url "https://github.com/kevinpinscoe/tools/releases/download/menu-app-v2.0.0/menu-app-linux-arm64"
+      sha256 "5e8fc52978920629efe606cbdb7e92d70e678ee4d9dff6f3ad20ba7b2c389767"
       define_method(:install) do
         bin.install "menu-app-linux-arm64" => "menu-app"
       end
