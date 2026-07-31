@@ -1,8 +1,8 @@
 cask "vermilian" do
-  version "1.2.8"
-  sha256 "abd69d96ad311ece830429ab406973e158343d758227911833830152fa915c35"
+  version "1.2.9"
+  sha256 "85bddde283c62839fb49575369cae068ada0bbf43a22d46d6b39a87b17c438ce"
 
-  url "https://github.com/kevinpinscoe/vermilian/releases/download/v1.2.8/Vermilian-1.2.8-arm64.dmg"
+  url "https://github.com/kevinpinscoe/vermilian/releases/download/v1.2.9/Vermilian-1.2.9-arm64.dmg"
   name "Vermilian"
   desc "monday.com-style desktop client for self-hosted JetBrains YouTrack"
   homepage "https://github.com/kevinpinscoe/vermilian"
