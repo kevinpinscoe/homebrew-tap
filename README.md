@@ -22,6 +22,7 @@ Everything here is a **cask**. There are no formulas — see
 
 ```bash
 brew tap kevinpinscoe/tap
+brew trust --cask kevinpinscoe/tap/get-wx
 brew install --cask get-wx
 ```
 
@@ -31,11 +32,33 @@ Or in one step, without tapping first:
 brew install --cask kevinpinscoe/tap/get-wx
 ```
 
+Substitute the cask you want for `get-wx`.
+
+### Trusting a cask
+
+Current Homebrew (7.x) refuses to load anything from a third-party tap until it
+is trusted. Without that step, `brew install` stops with `Refusing to load cask
+… from untrusted tap kevinpinscoe/tap`.
+
+Trust the casks you install one at a time, as above:
+`brew trust --cask kevinpinscoe/tap/<cask>`. The one-step form does the same
+thing: naming a cask by its fully qualified name trusts that cask as part of the
+install. Neither trusts the rest of this tap.
+
+Whole-tap trust (`brew trust kevinpinscoe/tap`) also works, but it trusts every
+cask here now and every cask added later, so it is not the recommended default.
+Do not turn off Homebrew's trust check to avoid the step. See
+[Tap Trust](https://docs.brew.sh/Tap-Trust).
+
+Verified 2026-10-16 with Homebrew 7.0.9 on Linux amd64, installing
+`bao-policy-editor`.
+
 ## Available casks
 
 | Cask | Description | Source |
-|---|---|---|
+| --- | --- | --- |
 | `aws-linux-memory-tools` | AWS Linux memory diagnostics | [aws-linux-memory-tools](https://github.com/kevinpinscoe/aws-linux-memory-tools) |
+| `bao-policy-editor` | Terminal editor for OpenBao HCL ACL policies (installs `bpe`) | [bao-policy-editor](https://github.com/kevinpinscoe/bao-policy-editor) |
 | `check-git-branch` | Scan git repos for non-default branches or leftover local branches | [tools](https://github.com/kevinpinscoe/tools) |
 | `check-git-repos` | Scan git repositories under a root directory for ahead/behind/diverged/uncommitted state | [tools](https://github.com/kevinpinscoe/tools) |
 | `get-wx` | Eastern Tennessee weather forecast fetcher | [get-wx](https://github.com/kevinpinscoe/get-wx) |
@@ -71,10 +94,12 @@ Existing installs do **not** follow the move on their own.
 
 ## Repository Layout
 
-```
+```text
 homebrew-tap/
+├── .gitignore
 ├── Casks/          # every cask in this tap; all generated, none hand-edited
 │   ├── aws-linux-memory-tools.rb
+│   ├── bao-policy-editor.rb
 │   ├── check-git-branch.rb
 │   ├── check-git-repos.rb
 │   ├── get-wx.rb
@@ -93,8 +118,8 @@ Each file carries a `DO NOT EDIT` header naming the generator that wrote it.
 Three pipelines feed this tap:
 
 | Source | Mechanism |
-|---|---|
-| `get-wx`, `metar-tool`, `skills-tui`, `aws-linux-memory-tools` | GoReleaser's `homebrew_casks:` block, on a `vX.Y.Z` tag |
+| --- | --- |
+| `get-wx`, `metar-tool`, `skills-tui`, `aws-linux-memory-tools`, `bao-policy-editor` | GoReleaser's `homebrew_casks:` block, on a `vX.Y.Z` tag |
 | `menu-app`, `check-git-repos`, `check-git-branch`, `pause` | `.github/homebrew-cask.py` in [tools](https://github.com/kevinpinscoe/tools), on a `<tool>-vX.Y.Z` tag |
 | `vermilian` | its own release workflow |
 
